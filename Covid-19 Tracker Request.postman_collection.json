@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "9f1fcdcd-533e-452a-b51f-0bb90f7aa1c5",
+		"name": "Covid-19 Tracker Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Covid cases_Countries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e1569ba6-d6de-49f2-be8b-e5dbef0e2760",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://corona-virus-stats.herokuapp.com/api/v1/cases/general-stats",
+					"protocol": "https",
+					"host": [
+						"corona-virus-stats",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cases",
+						"general-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Covid cases_world",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5dbf601-c341-40f1-bcab-8e58cafe8ebc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://corona-virus-stats.herokuapp.com/api/v1/cases/countries-search",
+					"protocol": "https",
+					"host": [
+						"corona-virus-stats",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cases",
+						"countries-search"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9f2735f5-810a-4a14-82fc-1fde77f81ad8",
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Test Started\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8e85946a-fb01-4893-bcf2-898f82ffc270",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
